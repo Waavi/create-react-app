@@ -1,0 +1,30 @@
+{
+    "extends": "rallycoding",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "no-loop-func": [1]
+    },
+    "globals": {
+        "alert": true,
+        "document": true,
+        "navigator": true,
+        "localStorage": true,
+        "URL": true,
+        "fetch": true,
+        "it": true,
+        "window": true
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["app/src"]
+            }
+        }
+    },
+    "rules": {
+        "semi": ["error", "never"],
+        "import/no-extraneous-dependencies": "off",
+        "max-len": "off",
+        "react/react-in-jsx-scope": "off"
+    }
+}
