@@ -11,5 +11,16 @@ const babelJest = require('babel-jest');
 
 module.exports = babelJest.createTransformer({
   presets: [require.resolve('babel-preset-react-app')],
+  // TODO: WAAVI CUSTOM
+  plugins: [
+    require.resolve('babel-plugin-jsx-classnames'),
+    require.resolve('babel-plugin-transform-decorators-legacy'),
+    [
+      require.resolve('babel-plugin-module-resolver'),
+      {
+        root: ['./src'],
+      },
+    ],
+  ],
   babelrc: false,
 });

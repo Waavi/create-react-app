@@ -12,7 +12,8 @@
         "URL": true,
         "fetch": true,
         "it": true,
-        "window": true
+        "window": true,
+        "expect": true
     },
     "settings": {
         "import/resolver": {
