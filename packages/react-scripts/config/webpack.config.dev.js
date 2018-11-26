@@ -168,7 +168,7 @@ module.exports = {
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
-              babelrc: false,
+              babelrc: true,
               presets: [require.resolve('babel-preset-react-app')],
               // TODO: WAAVI CUSTOM
               plugins: [
@@ -177,7 +177,10 @@ module.exports = {
                 [
                   require.resolve('babel-plugin-module-resolver'),
                   {
-                    root: ['./src'],
+                    root: ['.'],
+                    alias: {
+                      "@": ['./src']
+                    }
                   },
                 ],
               ],

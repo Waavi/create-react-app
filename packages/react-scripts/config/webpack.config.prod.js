@@ -51,7 +51,7 @@ const cssFilename = 'static/css/[name].[contenthash:8].css';
 // To have this structure working with relative paths, we have to use custom options.
 const extractTextPluginOptions = shouldUseRelativeAssetPaths
   ? // Making sure that the publicPath goes back to to build folder.
-    { publicPath: Array(cssFilename.split('/').length).join('../') }
+  { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
 // This is the production configuration.
@@ -175,7 +175,7 @@ module.exports = {
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
-              babelrc: false,
+              babelrc: true,
               presets: [require.resolve('babel-preset-react-app')],
               // TODO: WAAVI CUSTOM
               plugins: [
@@ -184,7 +184,10 @@ module.exports = {
                 [
                   require.resolve('babel-plugin-module-resolver'),
                   {
-                    root: ['./src'],
+                    root: ['.'],
+                    alias: {
+                      "@": ['./src']
+                    }
                   },
                 ],
               ],
