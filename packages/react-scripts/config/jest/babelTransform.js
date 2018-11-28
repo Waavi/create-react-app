@@ -18,7 +18,10 @@ module.exports = babelJest.createTransformer({
     [
       require.resolve('babel-plugin-module-resolver'),
       {
-        root: ['./src'],
+        root: ['.'],
+        alias: {
+          "@": ['./src']
+        }
       },
     ],
   ],
